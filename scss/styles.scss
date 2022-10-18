@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-weight: 300;
+  margin: 0;
+}
+
+//$main-color: #5dfec0;
+//$title-color: #18fea5;
+$title-color: #efefef;
+$main-color: #636bfc;
+$text-color: #999999;
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin boxHover {
+  background-color: #ffffff15;
+  animation-duration: .5s;
+  border-radius: 4px;
+  color: $main-color;
+}
+@mixin bg {
+  background: url("images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+@mixin parallaxbg {
+  background: url("images/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+@mixin button {
+  background: transparent;
+  border: solid 2px white;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  font-weight: 400;
+  transition: all 150ms ease-in-out;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+html, body {
+  font-family: "Inter", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+  overflow-x: hidden;
+  color: white;
+  height: 100%;
+  width: 100%;
+  @include center;
+}
+.wrapper {
+  max-width: 1920px;
+  &, &__content {
+    height: 100%;
+    width: 100%;
+  }
+  &__content {
+    position: relative;
+    top: 4rem;
+  }
+}
+.nav {
+  background-color: #111;
+  position: absolute;
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  z-index: 1;
+  &__content {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      margin: 0 2.5rem;
+    }
+    ul {
+      display: flex;
+      a {
+        &, li {
+          @include center;
+          font-size: 1.05rem;
+          height: 4rem;
+          width: 8rem;
+        }
+        &:hover {
+          @include boxHover;
+        }
+      }
+    }
+  }
+  &__navigation {
+    @include center;
+    position: absolute;
+    width: 100%;
+  }
+  &__icon {
+    margin: .5rem;
+    &, img {
+      height: 3rem;
+    }
+  }
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+.container {
+  @include center;
+  @include bg;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  &__item {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__btn {
+    font-size: 1.1rem;
+    min-width: 300px;
+    margin: 1rem;
+    button {
+      @include button;
+      min-width: 300px;
+      padding: 1rem;
+    }
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 350;
+    margin: .5rem 1rem;
+  }
+}
+.main {
+  color: black;
+  h3 {
+    color: $title-color;
+    font-weight: 400;
+    font-size: 5rem;
+    margin: 1rem;
+  }
+  &__content {
+    @include center;
+    flex-direction: column;
+    &:nth-child(3) {
+      @include parallaxbg;
+    }
+  }
+  &__container {
+    display: flex;
+    max-width: 1200px;
+    margin: 1rem 0;
+    &:first-child {
+      .main__section {
+        flex-direction: column;
+        &:first-child {
+          span {
+            color: $main-color;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+          }
+          p {
+            font-size: 1.4rem;
+            font-weight: 400;
+          }
+        }
+        &:last-child {
+          p {
+            font-weight: 400;
+            margin: 1rem 0;
+          }
+          span {
+            color: $text-color;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      justify-content: center;
+      align-items: center;
+      padding: 0 1.5rem;
+      .main__section {
+        display: flex;
+        flex-direction: column;
+        width: calc(45% - 2rem);
+        margin: 0 1rem;
+        p {
+          font-weight: 400;
+          font-size: 1.2rem;
+        }
+        span {
+          color: black;
+          font-weight: 400;
+          margin: 2rem 0;
+          line-height: 1.75;
+          span {
+            color: $text-color;
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      .main__section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        img {
+          width: 64px;
+          margin: 1rem 0;
+        }
+        p {
+          font-weight: 400;
+          font-size: 1.1rem;
+          margin: 0 0 1rem;
+        }
+        span {
+          color: $text-color;
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+  &__section {
+    display: flex;
+    width: calc(50% - 2rem);
+    margin: 0 1rem;
+  }
+}
