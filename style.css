@@ -342,7 +342,7 @@ article > * + * {
 }
 .programm__img {
   margin: 0 auto;
-  width: 70px;
+  width: 90px;
 }
 .programm__title {
   font-size: 18px;
@@ -374,14 +374,21 @@ article > * + * {
   background-color: #f6f6f6;
 }
 .contacts__tel {
-  font-size: 45px;
+  font-size: 40px;
   color: black;
   text-decoration: none;
 }
+.contacts__none {
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+
 .contacts__subtitle {
   margin: 30px auto;
   max-width: 300px;
 }
+
 .socials {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -398,9 +405,6 @@ article > * + * {
 }
 .socials__link {
   font-size: 50px;
-}
-.fa-telegram {
-  color: #0088cc;
 }
 
 .wrapper {
@@ -760,6 +764,7 @@ a.alexander:hover {
   bottom: 20px;
   opacity: 0.6;
   width: 90%;
+  color: #e6e6e6;
 }
 .project-card:hover .content{
   opacity: 1;
@@ -772,6 +777,7 @@ a.alexander:hover {
   font-weight: 500;
   font-size: 3.5rem;
   text-transform: capitalize;
+  background-color: #e6e6e6;
 }
 .highlight{
   color: #ff3559;
@@ -940,3 +946,7 @@ textarea {
 
   transform: translateX(-200%);
 }
+
+/* icons contact*/
+
+.
